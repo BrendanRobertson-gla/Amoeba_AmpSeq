@@ -145,18 +145,7 @@ p <- ggplot() +
 # Print the map
 print(p)
 
-#ggsave('map_plot_matt.tiff', 
-#      plot = p, 
-#     dpi = 'retina', 
-#    units = 'cm', 
-#   width = 50,
-#  height = 50)
-
-# Save the final map
-#ggsave("north_atlantic_sampling_sites_FINAL.png", plot = p, 
-#     width = 14, height = 12, dpi = 400, units = "in")
-#ggsave("north_atlantic_sampling_sites_FINAL.pdf", plot = p, 
-#      width = 14, height = 12, units = "in")
+#New to save final map out from plots section using export due to text_repel package
 
 # Print summary to verify the sample types are correct
 cat("\n=== SAMPLING SITE SUMMARY ===\n")
