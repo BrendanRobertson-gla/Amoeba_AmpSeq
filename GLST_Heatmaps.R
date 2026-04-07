@@ -8,7 +8,7 @@ suppressPackageStartupMessages({
 })
 
 # ---------- paths ----------
-base_dir  <- "/Users/brendan/Documents/Documents - Brendan’s MacBook Pro/University of Glasgow/PhD/Geographical Study/Write up/VCFs/VCFs_forbrendan"
+base_dir  <- "/Users/brendan/Documents/Documents - Brendan’s MacBook Pro/University of Glasgow/PhD/Geographical Study/Write up/VCFs/VCFs_forbrendan/Amoeba_GLST"
 meta_xlsx <- file.path(base_dir, "MetaData.xlsx")
 counts_f  <- file.path(base_dir, "target_counts.tsv")
 plot_dir  <- file.path(base_dir, "plots")
@@ -144,8 +144,8 @@ p_heat <- ggplot(heat_dat, aes(x = Target, y = SiteLabel, fill = logReads)) +
 
 print(p_heat)
 
-ggsave(file.path(plot_dir, "heatmap_targets_reads.png"), p_heat, width = 14, height = 12, dpi = 300)
-ggsave(file.path(plot_dir, "heatmap_targets_reads.pdf"), p_heat, width = 14, height = 12)
+#ggsave(file.path(plot_dir, "heatmap_targets_reads.png"), p_heat, width = 14, height = 12, dpi = 300)
+#ggsave(file.path(plot_dir, "heatmap_targets_reads.pdf"), p_heat, width = 14, height = 12)
 
 
 
@@ -222,18 +222,20 @@ p_clustered <- ggplot(site_level, aes(x = Target, y = SiteLabel, fill = logReads
 p_clustered_facet <- p_clustered +
   facet_grid(Country ~ ., scales = "free_y", space = "free_y")
 
+print(p_clustered_facet)
+
 # ---------- save outputs ----------
-ggsave(file.path(plot_dir, "heatmap_clustered.png"),
-       p_clustered, width = 14, height = 10, dpi = 300)
+#ggsave(file.path(plot_dir, "heatmap_clustered.png"),
+ #      p_clustered, width = 14, height = 10, dpi = 300)
 
-ggsave(file.path(plot_dir, "heatmap_clustered.pdf"),
-       p_clustered, width = 14, height = 10)
+#ggsave(file.path(plot_dir, "heatmap_clustered.pdf"),
+  #     p_clustered, width = 14, height = 10)
 
-ggsave(file.path(plot_dir, "heatmap_clustered_by_country.png"),
-       p_clustered_facet, width = 14, height = 12, dpi = 300)
+#ggsave(file.path(plot_dir, "heatmap_clustered_by_country.png"),
+   #    p_clustered_facet, width = 14, height = 12, dpi = 300)
 
-ggsave(file.path(plot_dir, "heatmap_clustered_by_country.pdf"),
-       p_clustered_facet, width = 14, height = 12)
+#ggsave(file.path(plot_dir, "heatmap_clustered_by_country.pdf"),
+ #      p_clustered_facet, width = 14, height = 12)
 
 print(p_clustered)
 print(p_clustered_facet)
