@@ -1,4 +1,4 @@
-#R Code for North Atlantic Map - FINAL VERSION
+#R Code for North Atlantic Map
 # Sample counts in labels, no size scaling, corrected sample types
 
 # Load required packages
@@ -28,7 +28,7 @@ map_data <- metadata %>%
     Sample_Count = n(),
     .groups = "drop"
   ) %>%
-  # Create corrected sample type categories based on your specifications
+  # Create corrected sample type categories
   mutate(
     Sample_Type_Category = case_when(
       Site %in% c("Fosså", "Salvågvika") ~ "Gill Tissue",
@@ -144,8 +144,6 @@ p <- ggplot() +
 
 # Print the map
 print(p)
-
-#New to save final map out from plots section using export due to text_repel package
 
 # Print summary to verify the sample types are correct
 cat("\n=== SAMPLING SITE SUMMARY ===\n")
